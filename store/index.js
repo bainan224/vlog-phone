@@ -20,16 +20,26 @@ export default new Vuex.Store({
 		login(state,user) {
 			state.loginStatus = true
 			state.user = user
-			state.token = state.user.token
 			uni.setStorageSync('user',JSON.stringify(user));
 		},
 		//退出登录
 		logout(state){
 			state.loginStatus = false
 			state.user ={}
-			state.token = false
 			uni.removeStorageSync('user');
-		}
+		},
+		//修改资料
+		editUserInfo(state,obj) {
+			if(state.user){
+				state.user.nickname = obj.nickname
+				state.user.password = obj.password
+				state.user.avatar = obj.avatar
+				state.user.gender = obj.gender
+				state.user.birthday = obj.birthday
+				state.user.address = obj.address
+				uni.setStorageSync('user',JSON.stringify(state.user));
+			}
+		},
 	},
 	actions: {
 

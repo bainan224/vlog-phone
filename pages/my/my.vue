@@ -17,16 +17,17 @@
 				class="rounded"
 				></image>
 			</view>
-		</template v-else>
+		</template>
 		
-		<view class="flex align-center p-2" hover-class="bg-light">
-			<image :src="user.avatar" style="width: 100rpx;height: 100rpx;" class="rounded-circle">
-			</image>
-			<view class="flex flex-column flex-1 px-2">
+	    <template v-else>
+		    <view class="flex align-center p-2" hover-class="bg-light">
+			   <image :src="user.avatar" style="width: 100rpx;height: 100rpx;" class="rounded-circle">
+			   </image>
+			   <view class="flex flex-column flex-1 px-2">
 				<text class="font-lg font-weight-bold text-dark">{{user.nickname}}</text>
 				<text class="font text-muted">总帖子{{myData[0].num}} 今日发帖{{myData[1].num}}</text>
-			</view>
-			<text class="iconfont icon-jinru" @click="userSet"></text>
+			   </view>
+			   <text class="iconfont icon-jinru" @click="userSet"></text>
 			</view>
 			
 			<view class="flex align-center px-3 py-2">
@@ -37,7 +38,7 @@
 					 >
 					 <text class="font-lg font-weight-bold">{{ item.num }}</text>
 					 <text class="font text-muted">{{ item.name }}</text>
-					 </view>
+			    </view>
 			</view>
 			
 			<view class="px-3 py-2">
@@ -59,6 +60,7 @@
 				<text slot="icon" class="iconfont icon-keyboard"></text>
 			</uni-list-item>
 		
+	    </template>
 	</view>
 </template>
 
@@ -107,6 +109,11 @@
 			   uni.navigateTo({
 			   	url:'../login/login'
 			   });
+		   },	
+		   userSet() {
+		   		uni.navigateTo({
+		   		 url:'../user-set/user-set'
+		   		});
 		   }	
 		}
 	};

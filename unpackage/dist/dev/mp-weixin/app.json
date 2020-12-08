@@ -4,7 +4,12 @@
     "pages/news/news",
     "pages/msg/msg",
     "pages/my/my",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/user-set/user-set",
+    "pages/user-safe/user-safe",
+    "pages/about/about",
+    "pages/user-info/user-info",
+    "pages/user-feedback/user-feedback"
   ],
   "subPackages": [],
   "window": {

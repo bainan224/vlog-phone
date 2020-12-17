@@ -235,6 +235,7 @@
 					.post(url,data)
 					.then(res =>{
 						this.loading=false;
+						console.log(res)
 						if (res) {
 							console.log(res);
 							//修改vuex的state.持久化存储
